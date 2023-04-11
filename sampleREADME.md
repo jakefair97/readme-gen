@@ -1,10 +1,10 @@
-# jfdklas;
+# Test generator
   
-  [![License: GPL](https://img.shields.io/badge/License-GPL-green.svg)](https://opensource.org/licenses/GPL)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
  
   ## Description
 
-  jfkdlas;
+  This is a test to check that a README is generated
 
   ## Table of Contents
 
@@ -17,27 +17,27 @@
 
   ## Installation
 
-  alskdjf
+  Install Inquirer using npm by running `npm i inquirer`
 
   ## Usage
 
-  a;slkdjf
+  Fill in the prompts to generate a readme
 
   ## Contributing
 
-  a;lsjdf
+  Simply fill in the prompts
 
   ## Tests
 
-  ;lks;jdf
+  N/A
 
   ## License
 
-  This project is licensed under the GPL license.
+  This project is licensed under the MIT license.
 
   ## Questions
 
-  If you have any questions about the project, feel free to reach out to me at iehf.
+  If you have any questions about the project, feel free to reach out to me at jacobf6797@gmail.com.
 
-  You can find more of my work at https://github.com/lsf.
+  You can find more of my work at https://github.com/jakefair97.
   
