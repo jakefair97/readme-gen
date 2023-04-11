@@ -1,7 +1,8 @@
-// TODO: Include packages needed for this application
+// packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
-// TODO: Create an array of questions for user input
+const generateMarkdown = require('./utils/generateMarkdown')
+// questions for user input
 
 inquirer.prompt([
     {
@@ -27,7 +28,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'contributing',
-        message: 'What are the contributing guidlines for your project?',
+        message: 'What are the contributing guidelines for your project?',
     },
     {
         type: 'input',
@@ -38,7 +39,7 @@ inquirer.prompt([
         type: 'list',
         name: 'license',
         message: 'Please choose a license for your project:',
-        choices: ['MIT', 'GPLv2', 'Apache', 'BSD', 'None'],
+        choices: ['MIT', 'Apache', 'GPL', 'BSD', 'None'],
     },
     {
         type: 'input',
@@ -52,48 +53,12 @@ inquirer.prompt([
     },
         
 ])
-.then((data) => writeToFile(`${data.title.toLowerCase().split(' ').join('')}.md`, data))
+.then((data) => writeToFile(`sampleREADME.md`, data))
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
-  const readmeOutline = `# ${data.title}
-  [![License: ${data.license}](https://img.shields.io/badge/License-${data.license}-green.svg)](https://opensource.org/licenses/${data.license})
 
-  ${data.description}
-
-  ## Table of Contents
-
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [License](#license)
-  - [Questions](#questions)
-
-  ## Installation
-
-  ${data.installation}
-
-  ## Usage
-
-  ${data.usage}
-
-  ## Contributing
-
-  ${data.contributing}
-
-  ## Tests
-
-  ${data.tests}
-
-  ## License
-
-  This project is licensed under the ${data.license} license.
-
-  ## Questions
-
-  If you have any questions about the repo, please open an issue or contact me directly at ${data.email}. You can find more of my work at https://github.com/${data.username}.
-  `;
+  const readmeOutline = generateMarkdown(data)
 
   fs.writeFile(fileName, readmeOutline, (err) =>
   err ? console.log(err) : console.log('Success!')
@@ -101,8 +66,3 @@ function writeToFile(fileName, data) {
 
 }
 
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
